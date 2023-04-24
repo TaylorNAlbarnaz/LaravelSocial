@@ -20,7 +20,7 @@
       <ul class="flex items-center">
         @auth
             <li><a href="#" class="p-3">{{ auth()->user()->name }}</a></li>
-            <li class="px-3">
+            <li class="px-3 text-red-600 hover:text-red-400">
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button type="submit">Logout</button>
@@ -29,8 +29,8 @@
         @endauth
 
         @guest
-            <li><a href="{{ route('login') }}" class="p-3">Login</a></li>
-            <li><a href="{{ route('register') }}" class="p-3">Register</a></li>
+            <li><a href="{{ route('register') }}" class="px-3 py-2 mr-2 border border-blue-700 hover:border-blue-900 rounded-md text-blue-700 hover:text-blue-900">Register</a></li>
+            <li><a href="{{ route('login') }}" class="px-3 py-2 border border-blue-700 rounded-md bg-blue-700 hover:bg-blue-900 text-white">Login</a></li>
         @endguest
       </ul>
     </nav>

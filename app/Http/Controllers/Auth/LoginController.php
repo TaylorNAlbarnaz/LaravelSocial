@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['guest']);
+    }
+    
     public function index()
     {
         return view('auth.login');
@@ -21,7 +26,7 @@ class LoginController extends Controller
         ]);
 
         // Logs in to the newly created user
-        if (!auth()->attempt($request->only('email', 'password'))) {
+        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('status', 'Invalid email or password!');
         }
 

@@ -19,7 +19,7 @@
 
       <ul class="flex items-center">
         @auth
-            <li><a href="#" class="p-3">{{ auth()->user()->name }}</a></li>
+            <li><a href="#" class="p-3"> {{ auth()->user()->name }} </a></li>
             <li class="px-3 text-red-600 hover:text-red-400">
                 <form action="{{ route('logout') }}" method="post">
                     @csrf

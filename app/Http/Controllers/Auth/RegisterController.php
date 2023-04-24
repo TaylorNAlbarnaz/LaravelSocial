@@ -33,8 +33,9 @@ class RegisterController extends Controller
         ]);
 
         // Logs in to the newly created user
+        auth()->attempt($request->only('email', 'password'));
 
-        // Redirects to main page
-        //return redirect()->route('home');
+        // Redirects to the dashboard
+        return redirect()->route('dashboard');
     }
 }

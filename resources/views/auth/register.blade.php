@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="flex justify-center">
-		<div class="w-8/12 md:w-4/12 bg-white p-6 mb-3">
+		<div class="w-8/12 md:w-4/12 bg-white p-6 mb-3 rounded-md">
             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl -translate-y-3">
                 Create an account
             </h1>
@@ -55,7 +55,7 @@
 
                 <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Create an account</button>
                 <p class="text-sm font-light text-gray-500">
-                    Already have an account? <a href="{{ route('home') }}" class="font-medium text-blue-600 hover:underline">Login here</a>
+                    Already have an account? <a href="{{ route('login') }}" class="font-medium text-blue-600 hover:underline">Login here</a>
                 </p>
             </form>
 		</div>

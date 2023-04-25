@@ -30,7 +30,7 @@ class LoginController extends Controller
             return back()->with('status', 'Invalid email or password!');
         }
 
-        // Redirects to the dashboard
-        return redirect()->route('dashboard');
+        // Redirects to the home page
+        return redirect()->route('home');
     }
 }

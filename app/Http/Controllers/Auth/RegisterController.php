@@ -24,7 +24,7 @@ class RegisterController extends Controller
         // Data Validation
         $this->validate($request, [
             'name' => 'required|max:255',
-            'username' => 'required|string|regex:/\w*$/|max:255',
+            'username' => 'required|string|alpha_dash|max:255',
             'email' => 'required|email|max:255',
             'password' => 'required|confirmed|min:8|max:16'
         ]);

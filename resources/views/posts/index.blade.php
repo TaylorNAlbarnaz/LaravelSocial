@@ -14,6 +14,25 @@
                             <p class="text-gray-400 text-sm">{{ $post->created_at->diffForHumans() }}</p>
                         </div>
                         <p class="text-gray-500">{{ $post->body }}</p>
+                    
+                        <div class="flex justify-between gap-4">
+                            @if ($post->likedBy(auth()->user()))
+                                <form action="{{ route('posts.like', $post->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-600">Unlike</button>
+                                </form>
+                            @else
+                                <form action="{{ route('posts.like', $post->id)}}" method="post">
+                                    @csrf
+                                    <button type="submit" class="text-blue-600">Like</button>
+                                </form>
+                            @endif
+
+                            @if ($post->likes->count() > 0)
+                                <span class="text-gray-400 cursor-default"> {{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }}</span>
+                            @endif
+                        </div>
                     </li>
                 @endforeach
             </ul>
